@@ -38,7 +38,7 @@ fi;
 # rsync behaves like cp --remove-destination by default, so the destination
 # is unlinked first.  If it were not so, this would copy over the other
 # snapshot(s) too!
-rsync -va --delete --delete-excluded --exclude-from '/backup/exclude.txt' /eng/ $SNAPSHOT_RW/daily.0 ;
+rsync -va --delete --delete-excluded --exclude-from '/backup/exclude.txt' /SOURCEPATH/ $SNAPSHOT_RW/daily.0 ;
 		    
 # step 5: update the mtime of daily.0 to reflect the snapshot time
 touch $SNAPSHOT_RW/daily.0 ;
