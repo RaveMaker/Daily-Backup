@@ -9,7 +9,7 @@ Create Daily and Weekly backups with File based DeDup using rsync.
 
 2. Edit backup.sh and change the SOURCEPATH and SNAPSHOT_RW paths.
 
-3. Edit crontab and add the scripts:
+3. Edit crontab and add the scripts using 'crontab -e' command:
 
         0 1 * * 0-5 /backup/daily.sh
     
