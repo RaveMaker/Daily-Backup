@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo "Starting Daily Backup"
-echo "Please Wait..."
+echo "Starting Daily Backup Please Wait..."
 
 SNAPSHOT_RW=/backup;
 SOURCEPATH=/home;

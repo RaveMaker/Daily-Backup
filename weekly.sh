@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo "Starting Weekly Backup"
-echo "Please Wait..."
+echo "Starting Weekly Backup Please Wait..."
 
 SNAPSHOT_RW=/backup;
 

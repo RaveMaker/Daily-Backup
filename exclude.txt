@@ -1,5 +1,6 @@
 .snapshot
 MOVED
 Moved
+moved
 TrashCan
 Expired
