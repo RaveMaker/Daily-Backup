@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo "Starting Weekly Backup"
 echo "Please Wait..."
 
@@ -8,7 +9,7 @@ SNAPSHOT_RW=/backup;
 if [ -d $SNAPSHOT_RW/weekly.3 ] ;
 then
 	rm -rf $SNAPSHOT_RW/weekly.3 ;
-fi ;
+fi;
 
 # step 2: shift the middle snapshots(s) back by one, if they exist
 if [ -d $SNAPSHOT_RW/weekly.2 ] ;

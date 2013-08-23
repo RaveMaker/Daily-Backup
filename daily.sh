@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo "Starting Daily Backup"
 echo "Please Wait..."
 
@@ -9,7 +10,7 @@ SOURCEPATH=/home;
 if [ -d $SNAPSHOT_RW/daily.5 ] ;
 then
 	rm -rf $SNAPSHOT_RW/daily.5 ;
-fi ;
+fi;
 	
 # step 2: shift the middle snapshots(s) back by one, if they exist
 if [ -d $SNAPSHOT_RW/daily.4 ] ;
