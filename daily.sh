@@ -1,13 +1,17 @@
 #!/bin/sh
 
-echo "Starting Daily Backup Please Wait..."
+# Make Daily backups with File based DeDup using rsync.
+#
+# by RaveMaker - http://ravemaker.net
 
+# Settings
 SNAPSHOT_RW="/backup"
 SOURCEPATH="/home"
 MAXSNAP=5
 CURRENTDIR=`pwd`
 
 # Move to backup location
+echo "Starting Daily Backup Please Wait..."
 cd $SNAPSHOT_RW
 
 # step 1: delete the oldest snapshot, if it exists:

@@ -1,34 +1,44 @@
 #!/bin/sh
 
-echo "Starting Weekly Backup Please Wait..."
+# Make Weekly backups from daily backup copies.
+#
+# by RaveMaker - http://ravemaker.net
 
+# Settings
 SNAPSHOT_RW=/backup;
+MAXSNAP=5
+CURRENTDIR=`pwd`
+
+# Move to backup location
+echo "Starting Weekly Backup Please Wait..."
+cd $SNAPSHOT_RW
 
 # step 1: delete the oldest snapshot, if it exists:
-if [ -d $SNAPSHOT_RW/weekly.3 ] ;
+if [ -d weekly.$MAXSNAP/ ] ;
 then
-	rm -rf $SNAPSHOT_RW/weekly.3 ;
+	rm -rf weekly.$MAXSNAP/ ;
 fi;
 
 # step 2: shift the middle snapshots(s) back by one, if they exist
-if [ -d $SNAPSHOT_RW/weekly.2 ] ;
-then
-    mv $SNAPSHOT_RW/weekly.2 $SNAPSHOT_RW/weekly.3 ;
-fi;
-if [ -d $SNAPSHOT_RW/weekly.1 ] ;
-then
-    mv $SNAPSHOT_RW/weekly.1 $SNAPSHOT_RW/weekly.2 ;
-fi;
-if [ -d $SNAPSHOT_RW/weekly.0 ] ;
-then
-    mv $SNAPSHOT_RW/weekly.0 $SNAPSHOT_RW/weekly.1;
-fi;
+let "MAXSNAP -= 1"
+while [  $MAXSNAP -ne "0" ]; do
+    if [ -d weekly.$MAXSNAP/ ]
+    then
+	NEWSNAP=$(($MAXSNAP + 1))
+	echo "weekly.$MAXSNAP moved to weekly.$NEWSNAP"
+	mv weekly.$MAXSNAP weekly.$NEWSNAP
+	let "MAXSNAP -= 1"
+    else
+	echo "weekly.$MAXSNAP not found"
+	let "MAXSNAP -= 1"
+    fi;
+done
 
 # step 3: make a hard-link-only (except for dirs) copy of
 # daily.5, assuming that exists, into weekly.0
-if [ -d $SNAPSHOT_RW/daily.5 ] ;
+if [ -d daily.5/ ] ;
 then
-    cp -al $SNAPSHOT_RW/daily.5 $SNAPSHOT_RW/weekly.0 ;
+    cp -al daily.5/ weekly.0/ ;
 fi;
 
 # note: do *not* update the mtime of weekly.0; it will reflect
