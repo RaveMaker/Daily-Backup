@@ -21,12 +21,12 @@ fi;
 
 # step 2: shift the middle snapshots(s) back by one, if they exist
 let "MAXSNAP -= 1"
-while [  $MAXSNAP -ne "0" ]; do
+while [  $MAXSNAP -ge "0" ]; do
     if [ -d weekly.$MAXSNAP/ ]
     then
 	NEWSNAP=$(($MAXSNAP + 1))
-	echo "weekly.$MAXSNAP moved to weekly.$NEWSNAP"
-	mv weekly.$MAXSNAP weekly.$NEWSNAP
+	echo "weekly.$MAXSNAP/ moved to weekly.$NEWSNAP/"
+	mv weekly.$MAXSNAP/ weekly.$NEWSNAP/
 	let "MAXSNAP -= 1"
     else
 	echo "weekly.$MAXSNAP not found"
