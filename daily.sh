@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make Daily backups with File based DeDup using rsync.
 #

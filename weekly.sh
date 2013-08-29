@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make Weekly backups from daily backup copies.
 #
