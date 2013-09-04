@@ -9,7 +9,7 @@ Create Daily and Weekly backups with File based DeDup using rsync.
 
 2. Edit backup.sh and change the SOURCEPATH and SNAPSHOT_RW paths.
 
-4. change MAXSNAP=5 to needed amount of backups.
+4. Change MAXSNAP=5 to needed amount of backups.
 
 5. Edit crontab using 'crontab -e' command and add the scripts:
 
