@@ -48,7 +48,7 @@ fi;
 # is unlinked first.  If it were not so, this would copy over the other
 # snapshot(s) too!
 echo "Make daily.0 backup copy"
-rsync -va --delete --delete-excluded --exclude-from $CURRENTDIR/exclude.txt $SOURCEPATH $SNAPSHOT_RW/daily.0/
+rsync -avP --delete --delete-excluded --exclude-from $CURRENTDIR/exclude.txt $SOURCEPATH $SNAPSHOT_RW/daily.0/
 
 # step 5: update the mtime of daily.0 to reflect the snapshot time
 touch daily.0/
