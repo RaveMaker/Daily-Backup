@@ -16,6 +16,6 @@ Create Daily and Weekly backups with File based DeDup using rsync.
         0 1 * * 0-5 /backup/daily.sh
         0 1 * * 6 /backup/weekly.sh
 
-by: [RaveMaker][RaveMaker].
+Author: [RaveMaker][RaveMaker].
 
 [RaveMaker]: http://ravemaker.net
