@@ -1,7 +1,7 @@
-Backup Script - Daily and Weekly backups with File based DeDup
+Daily Backup
 ==============================================================
 
-Create Daily and Weekly backups with File based DeDup using rsync.
+Create Daily and Weekly backups with File based deduplication using rsync.
 
 ### Installation
 
