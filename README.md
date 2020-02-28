@@ -5,16 +5,34 @@ Create Daily and Weekly backups with File based DeDup using rsync.
 
 ### Installation
 
-1. Clone this script from github or copy the files manually to your prefered directory.
+1. Clone this script from github or copy the files manually to your preferred directory.
 
-2. Edit daily.sh and weekly.sh and change the SOURCEPATH and SNAPSHOT_RW paths.
+2. Create settings.cfg from settings.cfg.example and change:
+```
+# Where to save the backups
+SNAPSHOT_RW="/backup"
 
-4. Change MAXSNAP to needed amount of backups.
+# folder to backup
+SOURCE_PATH="/home"
 
-5. Edit crontab using 'crontab -e' command and add the scripts:
+# Exclude files/folders list
+EXCLUDE="$PWD/exclude.txt"
 
-        0 1 * * 0-5 /backup/daily.sh
-        0 1 * * 6 /backup/weekly.sh
+# Amount of daily snapshots to keep
+MAX_DAILY_SNAPS=5
+
+# Amount of weekly snapshots to keep
+MAX_WEEKLY_SNAPS=5
+
+# Debug mode. set to "false" to enable backups.
+DEBUG_MODE="true"
+```
+
+3. Edit crontab using 'crontab -e' command and add the scripts:
+```
+0 1 * * 0-5 root /backup/daily.sh
+0 1 * * 6 root /backup/weekly.sh
+```
 
 Author: [RaveMaker][RaveMaker].
 

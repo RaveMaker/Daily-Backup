@@ -1,0 +1,22 @@
+# --------------------------------------------------------
+# Create settings.cfg and updated your settings
+# --------------------------------------------------------
+
+# Settings
+# Where to save the backups
+SNAPSHOT_RW="/backup"
+
+# folder to backup
+SOURCE_PATH="/home"
+
+# Exclude files/folders list
+EXCLUDE="$PWD/exclude.txt"
+
+# Amount of daily snapshots to keep
+MAX_DAILY_SNAPS=5
+
+# Amount of weekly snapshots to keep
+MAX_WEEKLY_SNAPS=5
+
+# Debug mode. set to "false" to enable backups.
+DEBUG_MODE="true"
