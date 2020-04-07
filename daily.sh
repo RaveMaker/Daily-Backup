@@ -57,7 +57,7 @@ fi
 # snapshot(s) too!
 echo "Make daily.0 backup copy"
 if [ "$DEBUG_MODE" == "false" ]; then
-  rsync -avP --delete --delete-excluded --exclude-from "$EXCLUDE" "$SOURCE_PATH $SNAPSHOT_RW/daily.0/"
+  rsync -avP --delete --delete-excluded --exclude-from "$EXCLUDE" "$SOURCE_PATH" "$SNAPSHOT_RW/daily.0/"
 fi
 
 # step 5: update the mtime of daily.0 to reflect the snapshot time
